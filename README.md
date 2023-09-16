@@ -7,6 +7,8 @@ This project involves building an ETL (Extract, Transform, Load) pipeline using 
 The data source for this project is Wiki Page Views, which is provided by the Wikimedia Foundation. This source contains pageview data since 2015, available in machine-readable format. The pageviews can be downloaded in gzip format and are aggregated per hour per page. Each hourly dump is approximately 50 MB in gzipped text files and ranges from 200 to 250 MB in size when uncompressed.
 
 ## Building the Pipeline
+
+![Pipeline DAG](https://github.com/VIVEK-JADHAV/wikipediaPageViews/blob/main/images/Dag.PNG)
 The ETL pipeline consists of four main tasks:
 
 1. **Get Data**: This task, implemented using a Bash Operator, executes a `curl` command to download the page views for a specific hour. It uses the `execution_date` parameter to extract the day, year, month, and hour values using Jinja templated strings.
